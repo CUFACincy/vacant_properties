@@ -5,6 +5,7 @@ class SubmissionsController < ApplicationController
 
   def create
     submission.save
-    redirect_to root_path
+    render text: 'ok', status: :created
   end
 end
+
