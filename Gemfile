@@ -51,6 +51,8 @@ group :test do
   gem 'timecop'
   gem 'shoulda-matchers'
   gem 'launchy'
+  gem 'fakeweb'
+  gem 'vcr'
 end
 
 group :staging, :production do
