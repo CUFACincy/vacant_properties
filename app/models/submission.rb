@@ -34,7 +34,7 @@ class Submission < ActiveRecord::Base
 
   def locality
     loc = geo_info.address_components_of_type(:administrative_area_level_3)
-    loc.empty? ? geo_info.city : loc
+    loc.empty? ? geo_info.city : loc.long_name
   end
 
   private
