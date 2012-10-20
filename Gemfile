@@ -7,6 +7,7 @@ gem 'rails', '3.2.8'
 
 gem 'pg'
 gem 'wuparty'
+gem 'redis'
 gem 'resque'
 gem 'geocoder'
 gem 'decent_exposure'

@@ -261,6 +261,7 @@ DEPENDENCIES
   pg
   rails (= 3.2.8)
   rdiscount
+  redis
   resque
   rspec-rails (~> 2.9.0)
   sass-rails (~> 3.2.3)
