@@ -4,7 +4,8 @@ class SubmissionsController < ApplicationController
   expose(:submission) { Submission.new_from_provider(params) }
 
   def create
-    submission.save
-    redirect_to root_path
+    submission.process
+    render text: 'ok', status: :created
   end
 end
+

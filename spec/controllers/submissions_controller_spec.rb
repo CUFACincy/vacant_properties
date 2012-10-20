@@ -6,7 +6,7 @@ describe SubmissionsController do
     before(:each) { post :create, provider_params }
 
     it "creates a new submission" do
-      response.should be_redirect
+      response.code.should eq("201")
     end
   end
 end
