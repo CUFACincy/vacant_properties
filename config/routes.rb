@@ -1,6 +1,6 @@
 VacantProperties::Application.routes.draw do
 
-  resources :submissions, only: :create
+  resources :submissions, only: [:create, :show]
   root to: 'high_voltage/pages#show', id: 'home'
 
 end
