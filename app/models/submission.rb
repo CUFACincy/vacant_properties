@@ -1,5 +1,7 @@
 class Submission < ActiveRecord::Base
   attr_accessible :form_data
+  protected :save
+  serialize :form_data
 
   def self.new_from_provider(attrs = {})
     payload = {
@@ -9,6 +11,20 @@ class Submission < ActiveRecord::Base
     }
 
     self.new(form_data: payload)
+  end
+
+  def process
+    save!
+    Resque.enqueue(GeocodeJob, self.id)
+  end
+
+  def set_geocoded(result)
+    form_data[:geocoded] = result
+    save!
+  end
+
+  def geo_info
+    form_data[:geocoded]
   end
 
   def street_address
