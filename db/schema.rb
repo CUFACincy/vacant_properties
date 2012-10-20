@@ -11,17 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121020005541) do
+ActiveRecord::Schema.define(:version => 20121020023654) do
+
+  create_table "localities", :force => true do |t|
+    t.string "name"
+  end
 
   create_table "resources", :force => true do |t|
     t.string   "name"
     t.string   "phone"
-    t.integer  "complaint_type_id"
     t.string   "phone_extension"
     t.string   "department_name"
     t.string   "contact_name"
     t.string   "contact_email"
     t.text     "other_information"
+    t.integer  "locality_id"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
   end
