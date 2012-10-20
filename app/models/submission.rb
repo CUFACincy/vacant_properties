@@ -15,7 +15,7 @@ class Submission < ActiveRecord::Base
 
   def process
     save!
-    Resque.enqueue(GeocodeJob, self.id)
+    GeocodeJob.perform(self.id)
   end
 
   def set_geocoded(result)
