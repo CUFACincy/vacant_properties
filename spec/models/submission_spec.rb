@@ -19,6 +19,10 @@ describe Submission, :vcr do
     it "saves the record" do
       submission.should_not be_new_record
     end
+
+    it "should record the Wofoo entry id" do
+      submission.wufoo_entry_id.should == provider_params["EntryId"].to_i
+    end
   end
 
   describe "#set_geocoded" do

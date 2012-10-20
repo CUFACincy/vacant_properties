@@ -11,12 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121020023654) do
-
-  create_table "submissions", :force => true do |t|
-    t.text     "form_data"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+ActiveRecord::Schema.define(:version => 20121020200444) do
 
   create_table "localities", :force => true do |t|
     t.string "name"
@@ -34,4 +29,12 @@ ActiveRecord::Schema.define(:version => 20121020023654) do
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
   end
+
+  create_table "submissions", :force => true do |t|
+    t.text     "form_data"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+    t.integer  "wufoo_entry_id"
+  end
+
 end

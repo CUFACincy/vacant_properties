@@ -12,9 +12,16 @@ When /^I submit my property in "Mount Healthy"$/ do
                 city:    "Cincinati",
                 zip_code: "45231" }
   post '/submissions', params_for_locality(locality)
+  visit "/thank_you/#{provider_params["EntryId"]}"
 end
 
 Then /^I should see a contact for my locality$/ do
-  visit submission_path(Submission.last)
   page.should have_content("(513) 931-8840")
+end
+
+Given /^there is a "(.*?)" locality$/ do |name|
+  l = Locality.new
+  l.name = name
+  l.save
+  l.resources.create(phone: "(513) 931-8840")
 end

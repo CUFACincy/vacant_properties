@@ -1,5 +1,5 @@
 class Submission < ActiveRecord::Base
-  attr_accessible :form_data
+  attr_accessible :form_data, :wufoo_entry_id
   protected :save
   serialize :form_data
 
@@ -7,10 +7,10 @@ class Submission < ActiveRecord::Base
     payload = {
       field_structure: attrs['FieldStructure'],
       form_structure: attrs['FormStructure'],
-      fields: attrs.select { |_| _.match(/Field\d{1,}$/) }
+      fields: attrs.select { |_| _.match(/Field\d{1,}$/) },
     }
 
-    self.new(form_data: payload)
+    self.new(form_data: payload, wufoo_entry_id: attrs['EntryId'])
   end
 
   def process

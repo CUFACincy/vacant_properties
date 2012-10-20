@@ -10,6 +10,6 @@ Feature: Submitting a Property
 
   @wip
   Scenario: Returning resources for a locality
+    Given there is a "Mount Healthy" locality
     When I submit my property in "Mount Healthy"
     Then I should see a contact for my locality
-
