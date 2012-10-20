@@ -1,0 +1,174 @@
+body{
+	background-image:url('../images/bg.png');
+}
+.row{
+	margin-top: 20px;
+}
+.footer{
+	padding-bottom: 30px;
+}
+/* LOGOS */
+.logo{
+	float: left;
+}
+.cufa{
+	float: right;
+}
+
+/* TEXT */
+h1{
+	font-family: Helvetica, helvetica;
+	font-weight: bold;
+	font-size: 32px;
+	color: #000;
+}
+h2{
+	font-family: Helvetica, helvetica;
+	font-weight: bold;
+	font-size: 24px;
+	color: #000;
+}
+.steps h2{
+	font-family: Helvetica, helvetica;
+	font-weight: bold;
+	font-size: 24px;
+	color: #494949;
+}
+.button h2{
+	color: #fff;
+}
+h3{
+	font-family: Helvetica, helvetica;
+	font-weight: normal;
+	font-size: 24px;
+	color: #000;
+}
+h4{
+	font-family: Helvetica, helvetica;
+	font-weight: bold;
+	font-size: 18px;
+	color: #494949;
+}
+h5{
+	font-family: Helvetica, helvetica;
+	font-weight: normal;
+	font-size: 18px;
+	color: #494949;
+}
+p{
+	font-family: Helvetica, helvetica;
+	font-weight: normal;
+	font-size: 14px;
+	color: #000;
+}
+span{
+	color: #7fc56e;
+}
+
+/* BUTTON */
+.button{
+	background: #7fc56e;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	border: none;
+	display: block;
+}
+.button:hover{
+	background: #51a73c;
+}
+.button h2:active{
+	color: #494949;
+}
+
+/* HOMEPAGE SPECIFIC */
+.header h1{
+	font-family: Helvetica, helvetica;
+	font-weight: bold;
+	font-size: 42px;
+	color: #494949;
+	margin: 43px 0 0 160px;
+}
+.header .mobile{
+	font-family: Helvetica, helvetica;
+	font-weight: bold;
+	font-size: 42px;
+	color: #494949;
+	margin: 10px 0 0 0;
+	text-align: center
+}
+.mobile-logo{
+	display: block;
+	margin: auto;
+}
+.steps .icon{
+	height: 125px;
+}
+.steps{
+	text-align: center;
+	margin: 50px 0;
+}
+.steps .icon img{
+	display: block;
+	margin: auto;
+}
+.notepad{
+	padding-top: 5px;
+}
+.camera{
+	padding-top: 18px;
+}
+.search{
+	padding-top: 15px;
+}
+.home-footer{
+	background: rgba(0,0,0,0.2);
+	margin-top: 50px;
+}
+.home-footer .cufa{
+	margin-top: 55px;
+}
+.home-footer p{
+	font-size: 12px;
+}
+.home-footer a span{
+	color: #51a73c;
+}
+.home-footer h3{
+	margin-top: 25%;
+}
+.home-footer a span:hover{
+	color: #494949;
+	text-decoration: underline;
+}
+
+/* THANKS SPECIFIC */
+ul{
+	list-style: none;
+}
+.fb{
+	float: left;
+	width: 40px;
+	height: 40px;
+	margin-right: 15px;
+}
+.mobile-fb{
+	width: 40px;
+	height: 40px;
+	margin-bottom:-15px
+}
+
+/* WUFOO SPECIFIC */
+.instructions p{
+	margin: 0;
+}
+.instructions{
+	margin-top: -20px;
+}
+.instructions h2{
+	margin-top: 30px;
+}
+.footer a:hover{
+	text-decoration: underline;
+	color: #000;
+}
