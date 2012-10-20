@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Submission do
+describe Submission, :vcr do
   let(:submission) { Submission.new_from_provider(provider_params) }
 
   describe ".new_from_provider" do
@@ -36,4 +36,13 @@ describe Submission do
     end
   end
 
+  describe "#locality" do
+    before(:each) do
+      submission.process
+    end
+
+    it "returns the locality from the geocoded data" do
+      submission.locality.should eq('Cincinnati')
+    end
+  end
 end

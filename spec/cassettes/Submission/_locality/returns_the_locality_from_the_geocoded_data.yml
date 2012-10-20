@@ -1,0 +1,67 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://maps.googleapis.com/maps/api/geocode/json?address=11126+Kenwood+Rd+45242&language=en&sensor=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      accept:
+      - ! '*/*'
+      user-agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      content-type:
+      - application/json; charset=UTF-8
+      date:
+      - Sat, 20 Oct 2012 17:26:06 GMT
+      expires:
+      - Sun, 21 Oct 2012 17:26:06 GMT
+      cache-control:
+      - public, max-age=86400
+      server:
+      - mafe
+      x-xss-protection:
+      - 1; mode=block
+      x-frame-options:
+      - SAMEORIGIN
+      connection:
+      - close
+    body:
+      encoding: US-ASCII
+      string: ! "{\n   \"results\" : [\n      {\n         \"address_components\" :
+        [\n            {\n               \"long_name\" : \"11126\",\n               \"short_name\"
+        : \"11126\",\n               \"types\" : [ \"street_number\" ]\n            },\n
+        \           {\n               \"long_name\" : \"Kenwood Rd\",\n               \"short_name\"
+        : \"Kenwood Rd\",\n               \"types\" : [ \"route\" ]\n            },\n
+        \           {\n               \"long_name\" : \"Cincinnati\",\n               \"short_name\"
+        : \"Cincinnati\",\n               \"types\" : [ \"locality\", \"political\"
+        ]\n            },\n            {\n               \"long_name\" : \"Hamilton\",\n
+        \              \"short_name\" : \"Hamilton\",\n               \"types\" :
+        [ \"administrative_area_level_2\", \"political\" ]\n            },\n            {\n
+        \              \"long_name\" : \"Ohio\",\n               \"short_name\" :
+        \"OH\",\n               \"types\" : [ \"administrative_area_level_1\", \"political\"
+        ]\n            },\n            {\n               \"long_name\" : \"United
+        States\",\n               \"short_name\" : \"US\",\n               \"types\"
+        : [ \"country\", \"political\" ]\n            },\n            {\n               \"long_name\"
+        : \"45242\",\n               \"short_name\" : \"45242\",\n               \"types\"
+        : [ \"postal_code\" ]\n            }\n         ],\n         \"formatted_address\"
+        : \"11126 Kenwood Rd, Cincinnati, OH 45242, USA\",\n         \"geometry\"
+        : {\n            \"location\" : {\n               \"lat\" : 39.26788340,\n
+        \              \"lng\" : -84.3720120\n            },\n            \"location_type\"
+        : \"ROOFTOP\",\n            \"viewport\" : {\n               \"northeast\"
+        : {\n                  \"lat\" : 39.26923238029150,\n                  \"lng\"
+        : -84.37066301970849\n               },\n               \"southwest\" : {\n
+        \                 \"lat\" : 39.26653441970850,\n                  \"lng\"
+        : -84.37336098029151\n               }\n            }\n         },\n         \"types\"
+        : [ \"street_address\" ]\n      }\n   ],\n   \"status\" : \"OK\"\n}\n"
+    http_version: '1.1'
+  recorded_at: Sat, 20 Oct 2012 17:26:07 GMT
+recorded_with: VCR 2.2.5

@@ -16,6 +16,7 @@ class Submission < ActiveRecord::Base
   def process
     save!
     GeocodeJob.perform(self.id)
+    self.reload
   end
 
   def set_geocoded(result)
@@ -29,6 +30,10 @@ class Submission < ActiveRecord::Base
 
   def street_address
     [form_fields['Field15'], form_fields['Field16']].join(' ')
+  end
+
+  def locality
+    geo_info.city
   end
 
   private
