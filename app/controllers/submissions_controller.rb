@@ -1,6 +1,6 @@
 class SubmissionsController < ApplicationController
   helper_method :resources, :submission
-  respond_to :html
+  respond_to :html, :json
 
   def create
     submission = Submission.new_from_provider(params)
@@ -9,7 +9,16 @@ class SubmissionsController < ApplicationController
   end
 
   def show
-    redirect_to "/waiting/#{params[:id]}" and return unless submission.present?
+    respond_to do |format|
+      if submission.present?
+        response.headers['Link'] = "<#{thank_you_path(submission)}>; rel='self'"
+        format.html
+        format.json { render json: {exists: true}, status: :ok }
+      else
+        format.html { redirect_to "/waiting/#{params[:id]}" }
+        format.json { render json: {}, status: :not_found }
+      end
+    end
   end
 
   def wait

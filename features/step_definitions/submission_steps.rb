@@ -42,12 +42,23 @@ Given /^the provider has not yet POSTed the information$/ do
 end
 
 When /^I view the results for the submission$/ do
-  visit '/submissions/23424'
+  visit "/thank_you/#{pretty_params['EntryId']}"
 end
 
-Then /^I should see a waiting for result page$/ do
+Then /^I should see a waiting for result page and the provider POSTs the info$/ do
   page.current_path.should match('waiting')
   page.should have_content('Waiting for information')
+
+  params = params_for_locality({
+    address:  "7607 Hamilton Avenue",
+    city:     "Cincinati",
+    zip_code: "45231"
+  })
+
+  post '/submissions', params
+
+  #page.current_path.should match('thank_you')
+  #page.should have_content @contact_phone_number
 end
 
 Given /^there is are two resources for trash removal$/ do
@@ -78,5 +89,9 @@ end
 
 Then /^I should not see the resouce for high grass$/ do
   page.should_not have_content(@grass_resource_phone)
+end
+
+Then /^the contact info is displayed$/ do
+  # lame. put it all in the above step.
 end
 
