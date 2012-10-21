@@ -256,10 +256,12 @@ def pretty_params
 end
 
 def params_for_locality(locality)
-  local_params = provider_params
+  local_params = pretty_params
   local_params["Field7"] = locality[:address]
+  local_params["Field15"] = locality[:address]
   local_params["Field9"] = locality[:city]
   local_params["Field11"] = locality[:zip_code]
+  local_params["Field16"] = locality[:zip_code]
   local_params
 end
 

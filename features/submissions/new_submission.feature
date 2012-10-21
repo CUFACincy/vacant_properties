@@ -8,8 +8,8 @@ Feature: Submitting a Property
     When the system receives a POST hook
     Then a new submission should be created
 
-  @wip
   Scenario: Returning resources for a locality
-    Given there is a "Mount Healthy" locality
-    When I submit my property in "Mount Healthy"
+    Given there is a Mount Healthy locality
+    And there is a resource for this locality
+    When I submit a property in Mount Healthy
     Then I should see a contact for my locality
