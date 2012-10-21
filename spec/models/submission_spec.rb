@@ -14,7 +14,10 @@ describe Submission, :vcr do
   end
 
   describe "#process" do
-    before(:each) { submission.process }
+    before(:each) do
+      FactoryGirl.create(:complaint, name: 'grass')
+      submission.process
+    end
 
     it "saves the record" do
       submission.should_not be_new_record
@@ -22,6 +25,10 @@ describe Submission, :vcr do
 
     it "should record the Wofoo entry id" do
       submission.wufoo_entry_id.should == provider_params["EntryId"].to_i
+    end
+
+    it "creates associations with complaints" do
+      submission.complaints.empty?.should == false
     end
   end
 

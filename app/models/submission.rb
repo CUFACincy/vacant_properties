@@ -3,6 +3,18 @@ class Submission < ActiveRecord::Base
   protected :save
   serialize :form_data
 
+  has_many :complaints
+
+  COMPLAINT_FIELD_MAPPING = {
+    grass: 'Field18',
+    rodent: 'Field18',
+    disrepair: 'Field20',
+    trash: 'Field21',
+    graffiti: 'Field22',
+    overgrown: 'Field23',
+    vehicle: 'Field24'
+  }
+
   def self.new_from_provider(attrs = {})
     payload = {
       field_structure: attrs['FieldStructure'],
@@ -14,6 +26,7 @@ class Submission < ActiveRecord::Base
   end
 
   def process
+    build_complaint_associations
     save!
     GeocodeJob.perform(self.id)
     self.reload
@@ -63,5 +76,13 @@ class Submission < ActiveRecord::Base
     form_data[:fields]
   end
 
+  def build_complaint_associations
+    COMPLAINT_FIELD_MAPPING.each do |complaint, field|
+      unless form_fields[field].blank?
+        complaint = Complaint.find_by_name(complaint)
+        complaints << complaint if complaint
+      end
+    end
+  end
 end
 
