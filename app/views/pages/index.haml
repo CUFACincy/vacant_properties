@@ -9,38 +9,42 @@
       %h3.mobile Have a property you'd like to report?
   .content.row
     .steps
-      .four.columns
-        %h2
-          %span> 1.
-          Get the Address
-          %h2
-            .icon.notepad
-              %img{:src => "/assets/notepad.png"}/
-            %p
-              We can't do much unless we know
-              where the property is.
-      .four.columns
-        %h2
-          %span> 2.
-          Snap a Picture
-          %h2
-            .icon.camera
-              %img{:src => "/assets/camera.png"}/
-            %p
-              A picture speaks a thousand words.
-              This isn't required, but encouraged!
-      .four.columns
-        %h2
-          %span> 3.
-          Find the Property
-          %h2
-            .icon.search
-              %img{:src => "/assets/search.png"}/
-            %p
-              It helps us if you can look up the property owner through Hamilton County Auditor.
-              %span
-                Note: This takes you to a new site.
-                %span/
+      %ul.block-grid.three-up
+        %li
+          %div
+            %h2
+              %span 1.
+              Get the Address
+            %h2
+              .icon.notepad
+                %img{:src => "/assets/notepad.png"}/
+              %p
+                We can't do much unless we know
+                where the property is.
+        %li
+          %div
+            %h2
+              %span 2.
+              Snap a Picture
+            %h2
+              .icon.camera
+                %img{:src => "/assets/camera.png"}/
+              %p
+                A picture speaks a thousand words.
+                This isn't required, but encouraged!
+        %li
+          %div
+            %h2
+              %span 3.
+              Find the Property
+            %h2
+              .icon.search
+                %img{:src => "/assets/search.png"}/
+              %p
+                It helps us if you can look up the property owner through Hamilton County Auditor.
+                %span
+                  Note: This takes you to a new site.
+                  %span/
   .button-row
     .five.columns.centered
       %a.button{:href => new_submission_path}

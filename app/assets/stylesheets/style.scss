@@ -116,12 +116,24 @@ span{
 }
 .steps{
 	text-align: center;
-	margin: 50px 0;
+	margin: 50px 0 0 0;
 }
 .steps .icon img{
 	display: block;
 	margin: auto;
 }
+
+.steps li {
+  & > div {
+    min-height: 300px;
+    margin: 1em;
+    padding: 1em;
+    background-color: #fff;
+    @include border-radius(10px);
+    @include box-shadow(#bbb 0px 0px 10px);
+  }
+}
+
 .notepad{
 	padding-top: 5px;
 }
