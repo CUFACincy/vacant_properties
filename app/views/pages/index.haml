@@ -1,6 +1,6 @@
 #main
   .header.row
-    .twelve.columns.show-for-medium.show-for-large
+    .twelve.columns.hide-for-small
       %a{href: root_path }
         %img.logo{:src => "/assets/logo.png"}/
       %h1 Have a property you'd like to report?
@@ -9,8 +9,8 @@
       %h3.mobile Have a property you'd like to report?
   .content.row
     .steps
-      %ul.block-grid.three-up
-        %li
+      %ul
+        %li.columns.four
           %div
             %h2
               %span 1.
@@ -21,7 +21,7 @@
               %p
                 We can't do much unless we know
                 where the property is.
-        %li
+        %li.columns.four
           %div
             %h2
               %span 2.
@@ -32,7 +32,7 @@
               %p
                 A picture speaks a thousand words.
                 This isn't required, but encouraged!
-        %li
+        %li.columns.four
           %div
             %h2
               %span 3.
@@ -55,10 +55,17 @@
 #footer.home-footer
   .footer.row
     .two.columns
-      %img.cufa{:src => "/assets/cufa_logo.png"}/
+      %img{:src => "/assets/cufa_logo.png"}/
     .five.columns
-      %h2 What is CUFA?
-      %p Communities United for Action is a city-wide, multi-issue community organization, which brings together organizations and communities across Cincinnati. Since 1980, CUFA has brought together people of multiple cultural and ethnic backgrounds and different income levels so we can support each other in building our own communities and work together on common issues, which affect all our neighborhoods.
+      %span
+        %h2 What is CUFA?
+        %p
+          Communities United for Action is a city-wide, multi-issue community
+          organization, which brings together organizations and communities
+          across Cincinnati. Since 1980, CUFA has brought together people of
+          multiple cultural and ethnic backgrounds and different income levels so
+          we can support each other in building our own communities and work
+          together on common issues, which affect all our neighborhoods.
     .five.columns
       %a{:href => "http://www.cufacincy.org/"}
         %h3

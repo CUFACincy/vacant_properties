@@ -1,7 +1,9 @@
 @import "foundation_and_overrides";
 @import "compass/layout/sticky-footer";
 
-@include sticky-footer(260px, "#main", "#footer-push", "#footer");
+@media only screen and (min-width: $screenSmall + 1) {
+  @include sticky-footer(260px, "#main", "#footer-push", "#footer");
+}
 
 #main {
   @include clearfix();
@@ -125,12 +127,14 @@ span{
 
 .steps li {
   & > div {
-    min-height: 300px;
     margin: 1em;
     padding: 1em;
     background-color: #fff;
     @include border-radius(10px);
     @include box-shadow(#bbb 0px 0px 10px);
+    @media only screen and (min-width: $screenSmall + 1) {
+      min-height: 300px;
+    }
   }
 }
 
@@ -147,7 +151,7 @@ span{
 	background: rgba(0,0,0,0.2);
   padding-top: 10px;
 }
-.home-footer .cufa{
+.home-footer img {
 	margin-top: 55px;
 }
 .home-footer p{
