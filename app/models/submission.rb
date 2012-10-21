@@ -29,7 +29,7 @@ class Submission < ActiveRecord::Base
   end
 
   def reporter_name
-    [form_fields['Field2'], form_fields['Field2']].join(' ')
+    [form_fields['Field2'], form_fields['Field3']].join(' ')
   end
 
   def reporter_phone
