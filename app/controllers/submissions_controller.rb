@@ -15,7 +15,19 @@ class SubmissionsController < ApplicationController
   end
 
   def resources
-    @resources ||= Locality.find_by_name(submission.locality).resources
+    return @resources if @resources
+
+    locality = Locality.find_by_name(submission.locality)
+
+    if locality
+      resources ||= locality.resources
+    else
+      resources = Resource.all
+    end
+
+    @resources = resources.select do |resource|
+      (resource.complaints & @submission.complaints).empty?
+    end
   end
 end
 

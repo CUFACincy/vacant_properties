@@ -16,5 +16,7 @@ Feature: Submitting a Property
 
   Scenario: Returning resources for problem types
     Given there is are two resources for trash removal
+    And there is one resource for high grass
     When I submit a property with a trash complaint
     Then I should see the two resources for trash removal
+    And I should not see the resouce for high grass
