@@ -13,6 +13,7 @@ class Submission < ActiveRecord::Base
     graffiti: 'Field22',
     overgrown: 'Field23',
     vehicle: 'Field24'
+    other: 'Field119'
   }
 
   def self.new_from_provider(attrs = {})
