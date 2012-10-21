@@ -1,5 +1,5 @@
 class SubmissionsController < ApplicationController
-  helper_method :resources
+  helper_method :resources, :submission
   respond_to :html
 
   def create
@@ -8,14 +8,14 @@ class SubmissionsController < ApplicationController
     render text: 'ok', status: :created
   end
 
-  def show
-    submission = Submission.find_by_wufoo_entry_id(params[:id])
-    @resources = Locality.find_by_name(submission.locality).resources
+  private
+
+  def submission
+    @submission ||= Submission.find_by_wufoo_entry_id(params[:id])
   end
 
-  private
   def resources
-    @resources
+    @resources ||= Locality.find_by_name(submission.locality).resources
   end
 end
 

@@ -28,6 +28,26 @@ class Submission < ActiveRecord::Base
     form_data[:geocoded]
   end
 
+  def reporter_name
+    [form_fields['Field2'], form_fields['Field2']].join(' ')
+  end
+
+  def reporter_phone
+    form_fields['Field6']
+  end
+
+  def reporter_email
+    form_fields['Field5']
+  end
+
+  def reported_owner
+    form_fields['Field123']
+  end
+
+  def city_name
+    form_fields['Field124']
+  end
+
   def street_address
     [form_fields['Field15'], form_fields['Field16']].join(' ')
   end
