@@ -1,50 +1,54 @@
-.header.row
-  .twelve.columns.hide-for-small
-    %a{href: root_path }
-      %img.logo{:src => "/assets/logo.png"}/
-    %h1 Have a property you'd like to report?
-  // .twelve.columns.hide-for-medium.hide-for-large
-  //  %img.mobile-logo{:src => "/assets/logo.png"}/
-  //  %h1.mobile Have a property you'd like to report?
-.content.row
-  .steps
-    .four.columns
-      %h2
-        %span> 1.
-        Get the Address
+#main
+  .header.row
+    .twelve.columns.hide-for-small
+      %a{href: root_path }
+        %img.logo{:src => "/assets/logo.png"}/
+      %h1 Have a property you'd like to report?
+    // .twelve.columns.hide-for-medium.hide-for-large
+    //  %img.mobile-logo{:src => "/assets/logo.png"}/
+    //  %h1.mobile Have a property you'd like to report?
+  .content.row
+    .steps
+      .four.columns
         %h2
-          .icon.notepad
-            %img{:src => "/assets/notepad.png"}/
-          %p
-            We can't do much unless we know
-            where the property is.
-    .four.columns
-      %h2
-        %span> 2.
-        Snap a Picture
+          %span> 1.
+          Get the Address
+          %h2
+            .icon.notepad
+              %img{:src => "/assets/notepad.png"}/
+            %p
+              We can't do much unless we know
+              where the property is.
+      .four.columns
         %h2
-          .icon.camera
-            %img{:src => "/assets/camera.png"}/
-          %p
-            A picture speaks a thousand words.
-            This isn't required, but encouraged!
-    .four.columns
-      %h2
-        %span> 3.
-        Find the Property
+          %span> 2.
+          Snap a Picture
+          %h2
+            .icon.camera
+              %img{:src => "/assets/camera.png"}/
+            %p
+              A picture speaks a thousand words.
+              This isn't required, but encouraged!
+      .four.columns
         %h2
-          .icon.search
-            %img{:src => "/assets/search.png"}/
-          %p
-            It helps us if you can look up the property owner through Hamilton Country Auditor.
-            %span
-              Note: This takes you to a new site.
-              %span/
-.row
-  .five.columns.centered
-    %a.button{:href => new_submission_path}
-      %h2 Submit Vacant Property
-.home-footer
+          %span> 3.
+          Find the Property
+          %h2
+            .icon.search
+              %img{:src => "/assets/search.png"}/
+            %p
+              It helps us if you can look up the property owner through Hamilton Country Auditor.
+              %span
+                Note: This takes you to a new site.
+                %span/
+  .button-row
+    .five.columns.centered
+      %a.button{:href => new_submission_path}
+        %h2 Submit Vacant Property
+
+  #footer-push
+
+#footer.home-footer
   .footer.row
     .two.columns
       %img.cufa{:src => "/assets/cufa_logo.png"}/
