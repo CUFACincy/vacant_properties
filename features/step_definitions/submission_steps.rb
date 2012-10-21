@@ -32,3 +32,20 @@ Given /^there is a resource for this locality$/ do
      phone: @contact_phone_number,
      locality: @locality)
 end
+
+Given /^I have submitted a property$/ do
+  # nothing to see here
+end
+
+Given /^the provider has not yet POSTed the information$/ do
+  # nothing to see here
+end
+
+When /^I view the results for the submission$/ do
+  visit '/submissions/23424'
+end
+
+Then /^I should see a waiting for result page$/ do
+  page.current_path.should match('waiting')
+  page.should have_content('Waiting for information')
+end

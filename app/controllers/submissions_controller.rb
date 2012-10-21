@@ -8,6 +8,13 @@ class SubmissionsController < ApplicationController
     render text: 'ok', status: :created
   end
 
+  def show
+    redirect_to "/waiting/#{params[:id]}" and return unless submission.present?
+  end
+
+  def wait
+  end
+
   private
 
   def submission
