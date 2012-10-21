@@ -1,12 +1,12 @@
 #main
   .header.row
-    .twelve.columns.hide-for-small
+    .twelve.columns.show-for-medium.show-for-large
       %a{href: root_path }
         %img.logo{:src => "/assets/logo.png"}/
       %h1 Have a property you'd like to report?
-    // .twelve.columns.hide-for-medium.hide-for-large
-    //  %img.mobile-logo{:src => "/assets/logo.png"}/
-    //  %h1.mobile Have a property you'd like to report?
+    .six.columns.show-for-small
+      %img.mobile-logo{:src => "/assets/logo.png"}/
+      %h3.mobile Have a property you'd like to report?
   .content.row
     .steps
       .four.columns
