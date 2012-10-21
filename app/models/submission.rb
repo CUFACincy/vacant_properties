@@ -12,7 +12,7 @@ class Submission < ActiveRecord::Base
     trash: 'Field21',
     graffiti: 'Field22',
     overgrown: 'Field23',
-    vehicle: 'Field24'
+    vehicle: 'Field24',
     other: 'Field119'
   }
 
