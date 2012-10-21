@@ -49,3 +49,34 @@ Then /^I should see a waiting for result page$/ do
   page.current_path.should match('waiting')
   page.should have_content('Waiting for information')
 end
+
+Given /^there is are two resources for trash removal$/ do
+  @resource_one_phone = "111-111-1111"
+  @resource_two_phone = "222-222-2222"
+
+  complaint = FactoryGirl.create(:complaint, name: 'trash')
+  FactoryGirl.create(:resource, phone: @resource_one_phone, complaints: [complaint])
+  FactoryGirl.create(:resource, phone: @resource_two_phone, complaints: [complaint])
+end
+
+When /^I submit a property with a trash complaint$/ do
+  step "the system receives a POST hook"
+  visit "/thank_you/#{provider_params["EntryId"]}"
+end
+
+Then /^I should see the two resources for trash removal$/ do
+  page.should have_content @resource_one_phone
+  page.should have_content @resource_two_phone
+end
+
+Given /^there is one resource for high grass$/ do
+  @grass_resource_phone = "333-333-3333"
+
+  complaint = FactoryGirl.create(:complaint, name: 'grass')
+  FactoryGirl.create(:resource, phone: @grass_resource_phone, complaints: [complaint])
+end
+
+Then /^I should not see the resouce for high grass$/ do
+  page.should_not have_content(@grass_resource_phone)
+end
+
