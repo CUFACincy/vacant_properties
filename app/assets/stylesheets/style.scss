@@ -17,9 +17,24 @@ body{
 	margin-top: 20px;
 }
 
+.row.wait {
+  margin-top: 10em;
+  #spin {
+    min-height: 12em;
+  }
+  h4 {
+    text-align: center;
+  }
+}
+
 .footer{
 	padding-bottom: 20px;
 }
+
+#footer-push {
+  margin-bottom: 1em;
+}
+
 /* LOGOS */
 .logo{
 	float: left;
@@ -151,9 +166,6 @@ span{
 	background: rgba(0,0,0,0.2);
   padding-top: 10px;
 }
-.home-footer img {
-	margin-top: 55px;
-}
 .home-footer p{
 	font-size: 12px;
 }
@@ -161,7 +173,6 @@ span{
 	color: #51a73c;
 }
 .home-footer h3{
-	margin-top: 25%;
 }
 .home-footer a span:hover{
 	color: #494949;

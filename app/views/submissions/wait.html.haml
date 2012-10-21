@@ -1,17 +1,12 @@
-- content_for(:title) { 'Waiting...' }
+- content_for(:title) { 'Getting Property Information' }
 
-.header.row
-  %a{href: root_path}
-    %img.logo{:src => "/assets/logo.png"}/
-  %img.cufa{:src => "/assets/cufa_logo.png"}/
-.content
-  .row
-    .four.columns.centered
-      %h1 Waiting for Results
-      %p Waiting for information
-  .row
-    .four.columns.centered
-      #spin
+.row.wait
+  .four.columns.centered
+    #spin
+.row
+  .four.columns.centered
+    %h4
+      Waiting for information about the property. You'll be on your way in a second or two.
 - content_for(:javascript) do
   :javascript
     $(document).ready(function() {
@@ -28,9 +23,9 @@
 
     var opts = {
       lines: 13, // The number of lines to draw
-      length: 24, // The length of each line
+      length: 36, // The length of each line
       width: 4, // The line thickness
-      radius: 36, // The radius of the inner circle
+      radius: 24, // The radius of the inner circle
       corners: 1, // Corner roundness (0..1)
       rotate: 0, // The rotation offset
       color: '#000', // #rgb or #rrggbb

@@ -1,72 +1,41 @@
-#main
-  .header.row
-    .twelve.columns.hide-for-small
-      %a{href: root_path }
-        %img.logo{:src => "/assets/logo.png"}/
-      %h1 Have a property you'd like to report?
-    .six.columns.show-for-small
-      %img.mobile-logo{:src => "/assets/logo.png"}/
-      %h3.mobile Have a property you'd like to report?
-  .content.row
-    .steps
-      %ul
-        %li.columns.four
-          %div
-            %h2
-              %span 1.
-              Get the Address
-            %h2
-              .icon.notepad
-                %img{:src => "/assets/notepad.png"}/
-              %p
-                We can't do much unless we know
-                where the property is.
-        %li.columns.four
-          %div
-            %h2
-              %span 2.
-              Snap a Picture
-            %h2
-              .icon.camera
-                %img{:src => "/assets/camera.png"}/
-              %p
-                A picture speaks a thousand words.
-                This isn't required, but encouraged!
-        %li.columns.four
-          %div
-            %h2
-              %span 3.
-              Find the Property
-            %h2
-              .icon.search
-                %img{:src => "/assets/search.png"}/
-              %p
-                It helps us if you can look up the property owner through Hamilton County Auditor.
-                %span
-                  Note: This takes you to a new site.
-                  %span/
-  .button-row
-    .five.columns.centered
-      %a.button{:href => new_submission_path}
-        %h2 Submit Vacant Property
-
-  #footer-push
-
-#footer.home-footer
-  .footer.row
-    .two.columns
-      %img{:src => "/assets/cufa_logo.png"}/
-    .five.columns
-      %span
-        %h2 What is CUFA?
-        %p
-          Communities United for Action is a city-wide, multi-issue community
-          organization, which brings together organizations and communities
-          across Cincinnati. Since 1980, CUFA has brought together people of
-          multiple cultural and ethnic backgrounds and different income levels so
-          we can support each other in building our own communities and work
-          together on common issues, which affect all our neighborhoods.
-    .five.columns
-      %a{:href => "http://www.cufacincy.org/"}
-        %h3
-          %span Visit Our Site to Learn More →
+.steps
+  %ul
+    %li.columns.four
+      %div
+        %h2
+          %span 1.
+          Get the Address
+        %h2
+          .icon.notepad
+            %img{:src => "/assets/notepad.png"}/
+          %p
+            We can't do much unless we know
+            where the property is.
+    %li.columns.four
+      %div
+        %h2
+          %span 2.
+          Snap a Picture
+        %h2
+          .icon.camera
+            %img{:src => "/assets/camera.png"}/
+          %p
+            A picture speaks a thousand words.
+            This isn't required, but encouraged!
+    %li.columns.four
+      %div
+        %h2
+          %span 3.
+          Find the Property
+        %h2
+          .icon.search
+            %img{:src => "/assets/search.png"}/
+          %p
+            It helps us if you can look up the property owner through Hamilton County Auditor.
+            %span
+              Note: This takes you to a new site.
+              %span/
+.row
+  .five.columns.centered
+    %a.button{:href => new_submission_path}
+      %h2 Submit Vacant Property

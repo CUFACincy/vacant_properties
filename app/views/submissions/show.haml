@@ -1,59 +1,42 @@
 - content_for(:title) { 'Submission Detail' }
 
-.header.row
-  %a{href: root_path}
-    %img.logo{:src => "/assets/logo.png"}/
-  %img.cufa{:src => "/assets/cufa_logo.png"}/
+.row
+  .twelve.columns
+    %h1 Thank You for Submitting a Property
+    %p
+      Communities United For Action Vacant Property Watch will alert the
+      responsible authorities and contact you within 7 days.
+    %p In the meantime, here are some helpful contacts
+.row
+  .six.columns.property
+    %h2
+      %span Reported Property
+    %ul
+      %li
+        %h4= submission.street_address
+      %li
+        %h5
+          %span Reported Owner:
+          = submission.reported_owner
+      %li
+        %h5
+          %span Area:
+          = submission.city_name
+  .six.columns
+    %h2
+      %span Resource Contacts
+    - resources.each do |resource|
+      .panel
+        - if resource.department_name
+          %h3= resource.department_name
+        - if resource.name
+          %p= resource.name
+        - if resource.contact_name
+          %p= resource.contact_name
+        - if resource.phone
+          %p= resource.phone
+.row
+  .five.columns.centered
+    %a.button{:href => new_submission_path}
+      %h2 Submit Another Property
 
-.content
-  .row
-    .twelve.columns
-      %h1 Thank You for Submitting a Property
-      %p Communities United For Action Vacant Property Watch will alert the responsible authorities and contact you within 7 days.
-      %p In the meantime, here are some helpful contacts
-  .row
-    .four.columns.property
-      %h2
-        %span Reported Property
-      %ul
-        %li
-          %h4= submission.street_address
-        %li
-          %h5
-            %span Reported Owner:
-            = submission.reported_owner
-        %li
-          %h5
-            %span Area:
-            = submission.city_name
-    .four.columns.offset-by-one.end
-      %h2
-        %span Resource Contacts
-      - resources.each do |resource|
-        %ul
-          %li
-            %h5= resource.name
-          %li
-            %h5= resource.contact_name
-          %li
-            %h4= resource.department_name
-          %li
-            %h4= resource.phone
-  .row
-    .five.columns
-      %a.button{:href => new_submission_path}
-        %h2 Submit Another Property
-
-.footer.row
-  .twelve.columns.show-for-small
-    %a{:href => "https://www.facebook.com/pages/Communities-United-For-Action/76160428960"}
-      %img.fb{:src => "/assets/f_logo.png"}/
-    %a{:href => "http://www.cufacincy.org/"}
-      %h3 Visit CUFA for more information →
-  .six.columns.show-for-medium.show-for-large
-    %a{:href => "https://www.facebook.com/pages/Communities-United-For-Action/76160428960"}
-      %img.mobile-fb{:src => "/assets/f_logo.png"}/
-      Like CUFA on Facebook
-  .six.columns.show-for-medium.show-for-large
-    %a{:href => "http://www.cufacincy.org/"}
-      %h3 Visit CUFA for more information →
