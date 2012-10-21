@@ -1,5 +1,7 @@
+@import "foundation_and_overrides";
+
 body{
-	background-image:url('../images/bg.png');
+	background-image:url('/assets/bg.png');
 }
 .row{
 	margin-top: 20px;

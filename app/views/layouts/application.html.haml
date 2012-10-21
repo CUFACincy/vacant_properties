@@ -5,20 +5,9 @@
     %meta{name: "viewport", content: "width=device-width, initial-scale=1.0"}
     = content_for(:head)
     %title= content_for?(:title) ? yield(:title) : "Vacant Property Watch"
-    = stylesheet_link_tag    "application"
+    = stylesheet_link_tag "style"
     = csrf_meta_tags
   %body
-    #wrapper.container
-      %header.row
-        .columns.twelve
-          %h1 Vacant Property Watch
-      #main.row
-        .columns.twelve
-          = render 'application/flashes'
-          = yield
-      %footer.row
-        .columns.twelve
-          %p
-            &copy; #{Date.today.year} #{link_to('Communities United for Action', 'http://cufacincy.org')}
+    = yield
     = javascript_include_tag "application"
     = content_for(:javascript)
