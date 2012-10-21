@@ -32,3 +32,16 @@ Given /^there is a resource for this locality$/ do
      phone: @contact_phone_number,
      locality: @locality)
 end
+
+Given /^there is are two resources for trash removal$/ do
+  pending # express the regexp above with the code you wish you had
+end
+
+When /^I submit a property with a trash complaint$/ do
+  pending # express the regexp above with the code you wish you had
+end
+
+Then /^I should see the two resources for trash removal$/ do
+  pending # express the regexp above with the code you wish you had
+end
+

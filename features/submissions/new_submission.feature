@@ -13,3 +13,8 @@ Feature: Submitting a Property
     And there is a resource for this locality
     When I submit a property in Mount Healthy
     Then I should see a contact for my locality
+
+  Scenario: Returning resources for problem types
+    Given there is are two resources for trash removal
+    When I submit a property with a trash complaint
+    Then I should see the two resources for trash removal
