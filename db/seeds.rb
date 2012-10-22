@@ -1,11 +1,55 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
+
 #
-# Examples:
+# Admin User
 #
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
-names = ["Addyston", "Amberley Village", "Anderson Township" ,"Arlington Heights" ,"Blue Ash" ,"Cheviot" ,"Cincinnati" ,"Cleves" ,"Colerain Township" ,"Columbia Township" ,"Crosby Township" ,"Deer Park" ,"Delhi Township" ,"Elmwood Place" ,"Evendale" ,"Fairfax" ,"Fairfield" ,"Forest Park" ,"Glendale" ,"Golf Manor" ,"Green Township" ,"Greenhills" ,"Harrison" ,"Harrison Township" ,"Indian Hill" ,"Lincoln Heights" ,"Lockland" ,"Loveland" ,"Madeira" ,"Mariemont" ,"Miami Township" ,"Milford" ,"Montgomery" ,"Mount Healthy" ,"Newtown" ,"North Bend" ,"North College Hill" ,"Norwood" ,"Reading" ,"Sharonville" ,"Silverton" ,"Springdale" ,"Springfield Township" ,"St. Bernard" ,"Sycamore Township" ,"Symmes Township" ,"Terrace Park" ,"Whitewater Township" ,"Woodlawn" ,"Wyoming"]
-names.each do |name|
-  Locality.create(name: name)
+AdminUser.find_or_create_by_email('admin@example.com',
+                                  password: 'password',
+                                  password_confirmation: 'password')
+
+
+#
+# Cities/Localities
+#
+cities = [
+  "Addyston", "Amberley Village", "Anderson Township" ,"Arlington Heights",
+  "Blue Ash" ,"Cheviot" ,"Cincinnati" ,"Cleves" ,"Colerain Township",
+  "Columbia Township" ,"Crosby Township" ,"Deer Park" ,"Delhi Township",
+  "Elmwood Place" ,"Evendale" ,"Fairfax" ,"Fairfield" ,"Forest Park",
+  "Glendale" ,"Golf Manor" ,"Green Township" ,"Greenhills" ,"Harrison",
+  "Harrison Township" ,"Indian Hill" ,"Lincoln Heights" ,"Lockland",
+  "Loveland" ,"Madeira" ,"Mariemont" ,"Miami Township" ,"Milford",
+  "Montgomery" ,"Mount Healthy" ,"Newtown" ,"North Bend" ,"North College Hill",
+  "Norwood" ,"Reading" ,"Sharonville" ,"Silverton" ,"Springdale" ,"Springfield Township",
+  "St. Bernard" ,"Sycamore Township" ,"Symmes Township" ,"Terrace Park",
+  "Whitewater Township" ,"Woodlawn" ,"Wyoming" ]
+
+cities.each { |name| Locality.find_or_create_by_name(name: name) }
+
+#
+# Complaints
+#
+complaints = {
+  grass: 'Field18',
+  rodent: 'Field18',
+  disrepair: 'Field20',
+  trash: 'Field21',
+  graffiti: 'Field22',
+  overgrown: 'Field23',
+  vehicle: 'Field24',
+  other: 'Field119'
+}
+
+complaints.each do |name, field|
+  Complaint.find_or_create_by_name(name, field_name: field)
+end
+
+#
+# Resources
+#
+resources = {
+  "Hamilton County" => { contact_name: 'Jim Smith', phone: '5135551212', complaint_names: 'grass, disrepair' }
+}
+
+resources.each do |resource, attrs|
+  Resource.find_or_create_by_name(resource, attrs)
 end
