@@ -2,10 +2,11 @@
 #
 # Admin User
 #
-AdminUser.find_or_create_by_email('admin@example.com',
-                                  password: 'password',
-                                  password_confirmation: 'password')
+emails = ['kevin.mosher08@gmail.com', 'chrism@gaslight.co']
 
+emails.each do |email|
+  AdminUser.find_or_create_by_email(email, password: 'password', password_confirmation: 'password')
+end
 
 #
 # Cities/Localities
@@ -53,3 +54,13 @@ resources = {
 resources.each do |resource, attrs|
   Resource.find_or_create_by_name(resource, attrs)
 end
+
+# Create a resource for each city. This will probably change.
+cities.each do |city|
+  Resource.find_or_create_by_name(city)
+end
+
+#
+# fin.
+#
+
