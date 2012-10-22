@@ -109,6 +109,10 @@ span{
 	color: #494949;
 }
 
+a.new-property.button {
+  margin: 2em auto;
+}
+
 /* HOMEPAGE SPECIFIC */
 .header h1{
 	font-family: Helvetica, helvetica;
@@ -148,7 +152,7 @@ span{
     @include border-radius(10px);
     @include box-shadow(#bbb 0px 0px 10px);
     @media only screen and (min-width: $screenSmall + 1) {
-      min-height: 300px;
+      min-height: 310px;
     }
   }
 }
