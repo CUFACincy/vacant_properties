@@ -15,8 +15,8 @@ Feature: Submitting a Property
     Then I should see a contact for my locality
 
   Scenario: Returning resources for problem types
-    Given there is are two resources for trash removal
+    Given there are two resources for trash removal
     And there is one resource for high grass
-    When I submit a property with a trash complaint
-    Then I should see the two resources for trash removal
-    And I should not see the resouce for high grass
+    When I submit a property with a grass complaint
+    Then I should not see the two resources for trash removal
+    And I should see the resource for high grass

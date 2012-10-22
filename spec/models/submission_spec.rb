@@ -15,7 +15,7 @@ describe Submission, :vcr do
 
   describe "#process" do
     before(:each) do
-      FactoryGirl.create(:complaint, name: 'grass')
+      Complaint.find_or_create_by_name('grass')
       submission.process
     end
 
@@ -47,13 +47,29 @@ describe Submission, :vcr do
     end
   end
 
-  describe "#locality" do
+  describe "#locality_name" do
     before(:each) do
       submission.process
     end
 
     it "returns the locality from the geocoded data" do
-      submission.locality.should eq('Cincinnati')
+      submission.locality_name.should eq('Cincinnati')
+    end
+  end
+
+  describe "#resources" do
+    before(:each) do
+      submission.process
+    end
+
+    context "when there are complaints with matching resources" do
+      it "has complaints" do
+        submission.complaints.should have(4).items
+      end
+
+      it "returns the resources" do
+        submission.resources.should have(51).items
+      end
     end
   end
 end
