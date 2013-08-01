@@ -33,7 +33,7 @@ group :assets do
 
 end
 
-gem 'jquery-rails'
+gem 'jquery-rails', "2.3.0"
 gem 'thin'
 gem 'haml-rails'
 gem 'high_voltage', ">= 1.2.0"
